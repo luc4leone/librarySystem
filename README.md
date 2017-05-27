@@ -1,4 +1,4 @@
-## watch and code challenge 4: creating libraries out of order
+## watchandcode.com challenge 4: creating libraries out of order
 
 In the previous challenge, you wrote a librarySystem function that could handle dependencies. It worked like this:
 
