@@ -2,7 +2,8 @@
 
 In the previous challenge, you wrote a librarySystem function that could handle dependencies. It worked like this:
 
-```librarySystem('name', [], function() {
+```javascript
+librarySystem('name', [], function() {
   return 'Gordon';
 });
 
@@ -12,14 +13,16 @@ librarySystem('company', [], function() {
 
 librarySystem('workBlurb', ['name', 'company'], function(name, company) {
   return name + ' works at ' + company;
-});```
+});
+```
 
 `librarySystem('workBlurb')`; // 'Gordon works at Watch and Code'
 However, the order of these function calls was very important. Specifically, you could only create the 'workBlurb' library after 'name' and 'company'.
 
 Your task is to rewrite librarySystem so that the following code works too. The only difference is that we're loading the libraries out of order (i.e. 'workBlurb' is created before its dependencies, 'name' and 'company').
 
-```librarySystem('workBlurb', ['name', 'company'], function(name, company) {
+```javascript
+librarySystem('workBlurb', ['name', 'company'], function(name, company) {
   return name + ' works at ' + company;
 });
 
@@ -29,9 +32,11 @@ librarySystem('name', [], function() {
 
 librarySystem('company', [], function() {
   return 'Watch and Code';
-});```
+});
+```
 
-librarySystem('workBlurb'); // 'Gordon works at Watch and Code'
+`librarySystem('workBlurb'); // 'Gordon works at Watch and Code'`
+
 Since this is starting to get complicated, you should write tests to make sure your solution fulfills all the requirements. If you want some warmup before tackling this, writing reduce on your own (as we did in Test Driven Development Part 9) is a good exercise to get you into the right mindset.
 
 Your tests should ensure that libraries can be created out of order. They should also ensure that all the requirements from the previous challenge are still being met.
